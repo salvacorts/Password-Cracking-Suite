@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 # Libraries 
 import os
@@ -155,4 +156,5 @@ def main():
     init()
 
 # Start
-main()
+if __name__ == '__main__':
+    main()
