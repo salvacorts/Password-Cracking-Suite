@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Libraries 
 import os
 import time
@@ -67,7 +69,7 @@ def online():
 def dics():
     os.system("clear")
     print("\n"+bg.option+"#########################################################################"+bg.end+bg.bold+"\n")
-    os.system("ls -la dics/")
+    os.system("ls dics/ | grep '' ")
     print("\n"+bg.option+"#########################################################################"+bg.end)
     print("\n")
     
@@ -78,8 +80,17 @@ def HashType():
     
 # Dictionary Crack
 def dictionary():
-    # Use JTR!
     os.system("clear")
+    hash = input(bg.input+"\n [+] "+bg.blue+"Hash? >> "+bg.end)
+    hashType = input(bg.input+"\n [+] "+bg.blue+"Hash Encryption? >> "+bg.end)
+    dictionary = input(bg.input+"\n [+] "+bg.blue+"Dictionary Path? >> "+bg.end)
+    addOp = input(bg.input+"\n [+] "+bg.blue+"Additional options? >> "+bg.end)
+    f = open("hash.txt", "w")
+    f.write(hash)
+    f.close()
+    print (bg.option+"\n [*] Running command:  "+bg.end+"john --wordlist="+bg.input+dictionary+bg.end+" --format="+bg.input+hashType+" "+addOp+bg.end+" hash.txt"+bg.option+"   With Hash "+bg.input+hash+bg.end+"\n")
+    os.system("john --wordlist="+dictionary+" --format="+hashType+" "+addOp+" hash.txt")
+    os.system("rm hash.txt")
 
 def bruteforce():
     # Use JTR!
