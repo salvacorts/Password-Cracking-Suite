@@ -4,7 +4,7 @@ How To Use It:
 ----------------
 
 - git clone https://github.com/TecnoHack/Password-Cracking-Suite.git
-- chmod +x csuit.py
+- chmod +x csuit.py && mkdir dics && mkdir tools
 - ./csuit.py
 
 Dics Path:
