@@ -3,6 +3,7 @@
 How To Use It:
 ----------------
 
+- git clone https://github.com/TecnoHack/Password-Cracking-Suite.git
 - chmod +x csuit.py
 - ./csuit.py
 
