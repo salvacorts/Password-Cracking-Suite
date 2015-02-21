@@ -47,6 +47,10 @@ Availible Hash Types:
     raw-sha256 raw-sha384 raw-sha512 salted-sha1 sapb
     sapg sha1-gen sha256crypt sha512crypt sip ssh
     sybasease trip vnc wbb3 wpapsk xsha xsha512 zip
+    
+Screenshot:
+------------
+![screenshot](http://s12.postimg.org/oonjsm4q5/snapshot.png)
 
 Author:
 =======
