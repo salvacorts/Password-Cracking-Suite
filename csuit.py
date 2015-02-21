@@ -42,6 +42,27 @@ def banner():
     print("#                                                                                #")
     print("##################################################################################\n"+bg.end)
 
+# bruteforce Banner
+def brutBanner():
+    print("\n"+bg.end+bg.green+"##################################################################################")
+    print("#                                                                                #")
+    print("#"+bg.underline+bg.bold+bg.input+"\t\t\t   Hash Craking Suite by @SalvaCorts   "+bg.end+bg.green+"                  #")
+    print("#                                                                                #")
+    print("#                                                                                #")
+    print("#                                                                                #")
+    print("#"+bg.end+bg.bold+"\t\t\t\t·Incremental Modes:"+bg.end+bg.green+"                              #")
+    print("#                                                                                #")
+    print("#"+bg.option+"\t[*]"+bg.blue+" Only Letters:"+bg.input+" alpha"+bg.green+"                                                  #")
+    print("#"+bg.option+"\t[*]"+bg.blue+" Only Numbers:"+bg.input+" digits"+bg.green+"                                                 #")
+    print("#"+bg.option+"\t[*]"+bg.blue+" Letters, Numbers and Special Characters:"+bg.input+" lanman"+bg.green+"                      #")
+    print("#"+bg.option+"\t[*]"+bg.blue+" All Characters:"+bg.input+" all"+bg.green+"                                                  #")
+    print("#                                                                                #")
+    print("#                                                                                #")
+    print("##################################################################################\n"+bg.end)   
+
+    
+    
+    
 # Ask if finish
 def finish():
     finish = input(bg.input+"\n [+] "+bg.blue+"Finish?(y/n)  >> "+bg.end)
@@ -93,8 +114,22 @@ def dictionary():
     os.system("rm hash.txt")
 
 def bruteforce():
-    # Use JTR!
     os.system("clear")
+    brutBanner() # Display Bruteforce Banner
+    hash = input(bg.input+"\n [+] "+bg.blue+"Hash? >> "+bg.end)
+    hashType = input(bg.input+"\n [+] "+bg.blue+"Hash Encryption? >> "+bg.end)
+    incrementalMode = input(bg.input+"\n [+] "+bg.blue+"Incremental Mode?[] >> "+bg.end)
+    f = open("hash.txt", "w")
+    f.write(hash)
+    f.close()
+    if (incrementalMode == ""):
+        print (bg.option+"\n [*] Running command:  "+bg.end+"john --incremental --format="+bg.input+hashType+" hash.txt"+bg.option+"    With Hash "+bg.input+hash+bg.end+"\n")
+        os.system("john --incremental --format="+hashType+" hash.txt")
+        os.system("rm hash.txt")
+    else:
+        print (bg.option+"\n [*] Running command:  "+bg.end+"john --incremental="+bg.input+incrementalMode+bg.end+" --format="+bg.input+hashType+bg.end+" hash.txt"+bg.option+"   With Hash "+bg.input+hash+bg.end+"\n")
+        os.system("john --incremental="+incrementalMode+" --format="+hashType+" hash.txt")
+        os.system("rm hash.txt")
 
 # Install Tools
 def install():
@@ -111,12 +146,13 @@ def install():
     os.system("sudo pacman -S john") # Archlinux
     os.system("sudo apt-get install john") # Ubuntu
     os.system("sudo yum install john") # Fedora
-    
+     
     # Everything Done
     print(bg.end+bg.option+"\n\n\n [*] Everything have been installed!"+bg.end)
     
 # Main
 def main():
+    os.system("mkdir dics && mkdir tools")
     os.system("clear")
     def init():
         banner()
