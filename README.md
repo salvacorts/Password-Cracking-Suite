@@ -23,12 +23,11 @@ In this path, the script will install 3rd party tools. You can download some her
     http://www.openwall.com/wordlists/
     http://www.outpost9.com/files/WordLists.html
 
-
-
 Tools used by the script:
 ---------------------------
-- Hash-Indentifier -> https://code.google.com/p/hash-identifier/
-- Findmyhash -> https://code.google.com/p/findmyhash/
+- Hash-Indentifier --> https://code.google.com/p/hash-identifier/
+- Findmyhash --> https://code.google.com/p/findmyhash/
+- John The Ripper --> http://www.openwall.com/john/
 
 Availible Hash Types:
 --------------------------
