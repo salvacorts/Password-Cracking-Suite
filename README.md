@@ -13,7 +13,15 @@ In this path, you can add any dictionary you would like to use.
 
 Tools Path:
 ---------------
-In this path, the script will install 3rd party tools
+In this path, the script will install 3rd party tools. You can download some here:
+
+    http://www.moehre.org/bruteforce.html
+    http://cyberwarzone.com/cyberwarfare/password-cracking-mega-collection-password-cracking-word-lists
+    http://www.packetstormsecurity.org/Crackers/wordlists/
+    http://www.theargon.com/achilles/wordlists/
+    http://www.openwall.com/wordlists/
+    http://www.outpost9.com/files/WordLists.html
+
 
 
 Tools used by the script:
