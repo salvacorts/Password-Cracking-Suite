@@ -28,6 +28,7 @@ Tools used by the script:
 - Hash-Indentifier --> https://code.google.com/p/hash-identifier/
 - Findmyhash --> https://code.google.com/p/findmyhash/
 - John The Ripper --> http://www.openwall.com/john/
+- Crunch --> http://sourceforge.net/projects/crunch-wordlist/
 
 Availible Hash Types:
 --------------------------
