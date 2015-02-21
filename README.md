@@ -1,4 +1,5 @@
 # Password Cracking Suite
+![lock](http://cybersecurityventures.com/2015-wp/wp-content/uploads/2013/05/lock-logo1.png)
 
 How To Use It:
 ----------------
