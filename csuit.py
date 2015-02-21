@@ -39,7 +39,9 @@ def banner():
     print("#                                                                                #")
     print("#"+bg.end+bg.bold+"\t\t\t\t·MISCELLANEOUS:"+bg.green+"                                  #")
     print("#                                                                                #")
-    print("#"+bg.end+bg.option+"\t[5]"+bg.blue+" List Dictionaries\t"+bg.option+"[6]"+bg.blue+" Install tools"+bg.option+"\t[7]"+bg.blue+" Exit"+bg.green+"                 #")
+    print("#"+bg.end+bg.option+"\t[5]"+bg.blue+" List Dictionaries\t"+bg.option+"[6]"+bg.blue+" Create a Dictionary"+bg.green+"                          #")
+    print("#                                                                                #")
+    print("#"+bg.end+bg.option+"\t[7]"+bg.blue+" Install Tools\t"+bg.option+"[8]"+bg.blue+" Exit"+bg.green+"                                         #")    
     print("#                                                                                #")
     print("##################################################################################\n"+bg.end)
 
@@ -95,6 +97,29 @@ def dics():
     print("\n"+bg.option+"#########################################################################"+bg.end)
     print("\n")
     
+# Dictionary Creator
+def newDic():
+    os.system("clear")
+    minLen = input(bg.input+"\n [+] "+bg.blue+"Password Minimun Length (the same as pattern)? >> "+bg.end)
+    minLen = str(minLen)
+    maxLen = input(bg.input+"\n [+] "+bg.blue+"Password Maximun Length? >> "+bg.end)
+    maxLen = str(maxLen)
+    char = input(bg.input+"\n [+] "+bg.blue+"Characters to be used?[] >> "+bg.end)
+    char = str(char)
+    pattern = input(bg.input+"\n [+] "+bg.blue+"Pattern to be based on and variations (Ej: word@@ will create word11, word12,...,word99)?[] >> "+bg.end)
+    pattern = str(pattern)
+    name = input(bg.input+"\n [+] "+bg.blue+"Dictionary Name? >> "+bg.end)
+    name = str(name)
+    if (char == ""):
+        print (bg.option+"\n [*] Running command:  "+bg.end+"crunch "+bg.input+minLen+" "+maxLen+bg.end+" -o dics/"+bg.input+name+bg.end+"\n")
+        os.system("crunch "+minLen+" "+maxLen+" -o dics/"+name)
+    elif ((char != "") and (pattern == "")):
+        print (bg.option+"\n [*] Running command:  "+bg.end+"crunch "+bg.input+minLen+" "+maxLen+bg.input+" "+char+bg.end+" -o dics/"+bg.input+name+bg.end+"\n")
+        os.system("crunch "+minLen+" "+maxLen+" "+char+" -o dics/"+name)
+    elif (pattern != ""):
+        print (bg.option+"\n [*] Running command:  "+bg.end+"crunch "+bg.input+minLen+" "+maxLen+bg.input+" "+char+bg.end+" -t "+bg.input+pattern+bg.end+" -o dics/"+bg.input+name+bg.end+"\n")
+        os.system("crunch "+minLen+" "+maxLen+" "+char+" -t "+pattern+" -o dics/"+name)
+        
 # Hash Type
 def HashType():
     os.system("clear")
@@ -114,6 +139,7 @@ def dictionary():
     os.system("john --wordlist="+dictionary+" --format="+hashType+" "+addOp+" hash.txt")
     os.system("rm hash.txt")
 
+# Bruteforce Attack
 def bruteforce():
     os.system("clear")
     brutBanner() # Display Bruteforce Banner
@@ -147,6 +173,13 @@ def install():
     os.system("sudo pacman -S john") # Archlinux
     os.system("sudo apt-get install john") # Ubuntu
     os.system("sudo yum install john") # Fedora
+    
+    # Install Crunch
+    print(bg.end+bg.option+"\n [*] Installing Crunch"+bg.end)
+    os.system("yaourt -S crunch") # Archlinux
+    os.system("sudo apt-get install crunch") # Ubuntu
+    os.system("sudo yum install crunch") # Fedora    
+    
      
     # Everything Done
     print(bg.end+bg.option+"\n\n\n [*] Everything have been installed!"+bg.end)
@@ -175,10 +208,13 @@ def main():
         elif (option == "5"): # List Dictionaries
             dics()
             init()
-        elif (option == "6"): # Install Tools
+        elif (option == "6"): # List Dictionaries
+            newDic()
+            init()
+        elif (option == "7"): # Install Tools
             install()
             finish()
-        elif (option == "7"): # Exit
+        elif (option == "8"): # Exit
             os.system("clear")
             print(bg.option+"\n Happy Hacking!"+bg.end)
             time.sleep(1)
