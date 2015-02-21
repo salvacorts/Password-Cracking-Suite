@@ -16,6 +16,39 @@ class bg:
     bold = '\033[1m'
     underline = '\033[4m'
 
+def lock():
+    print("\n"+bg.option)                                                            
+    print("                                 :;;;;;;;;;;;            ")                                     
+    print("                                ;;;;;;;;;;;;;;;          ")                                 
+    print("                              `;;;;;;;;;;;;;;;;;         ")                         
+    print("                              ;;;;;;`     `;;;;;;        ")                         
+    print("                             ;;;;;          ,;;;;`       ")                         
+    print("                            .;;;;            ,;;;;       ")                         
+    print("                            ;;;;              ;;;;       ")                         
+    print("                            ;;;;               ;;;;      ")                         
+    print("                           .;;;.               ;;;;      ")                         
+    print("                           ;;;;                ;;;;      ")                         
+    print("                           ;;;;                .;;;      ")                         
+    print("                           ;;;;                          ")                         
+    print("                           ;;;;                .....     ")                    
+    print("                       ::::::::::::::::::::::::::::::::  ")                         
+    print("                       ::::::::::::::::::::::::::::::::  ")                         
+    print("                       ::::::::::::::::::::::::::::::::  ")                         
+    print("                       ,:::.                       ::::  ")                         
+    print("                       ,:::.          ;;;;         ::::  ")                         
+    print("                       ,:::,         ;;;;;.        ::::  ")                         
+    print("                       .:::,         ;;;;;;        ::::  ")                         
+    print("                       .:::,         ;;;;;,        ::::  ")                         
+    print("                         ::::        ;;;;;,      ,::::   ")                         
+    print("                         :::::       ;;;;;;      ::::    ")                         
+    print("                          ::::,      ;;;;;;     :::::    ")                         
+    print("                          ,::::,               :::::     ")                         
+    print("                           ::::::            ,:::::      ")                         
+    print("                            :::::::.       :::::::`      ")                         
+    print("                             ::::::::::::::::::::        ")                         
+    print("                              `:::::::::::::::::         ")                         
+    print("                                .:::::::::::::           ")                         
+    print(bg.input+bg.bold+bg.underline+"\n\tPassword Cracking Suit by @SalvaCorts for @TecnoHackOrg"+bg.end)                                                            
 
 # Banner
 def banner():
@@ -186,6 +219,9 @@ def install():
     
 # Main
 def main():
+    os.system("clear")
+    lock()
+    time.sleep(1.5)
     os.system("mkdir dics && mkdir tools")
     os.system("clear")
     def init():
